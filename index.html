@@ -1,31 +1,43 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Younus Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Younus Portfolio</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
 <!-- ======================= Home ======================= -->
-    <div id="header">
+    <a href="#" class="scroll-to-top"><i class="fas fa-chevron-up"></i></a>
+    <section id="header">
+        <div class="header container">
+            <div class="nav-bar">
+                <div class="brand">
+                    <a href="#">
+                        <h1>Port<span>folio.</span></h1>
+                    </a>
+                </div>
+                <div class="nav-list">
+                    <div class="hamburger">
+                        <div class="bar"></div>
+                    </div>
+                    <ul>
+                        <li><a href="#" data-after="Home">Home</a></li>
+                        <li><a href="#about" data-after="About">About</a></li>
+                        <li><a href="#services" data-after="Services">Services</a></li>
+                        <li><a href="#portfolio" data-after="Projects">Projects</a></li>
+                        <li><a href="#contact" data-after="Contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="bg-img">
         <div class="container">
-            <nav>
-                <img src="images/logo.png" class=""logo alt="logo">
-                <ul id="sidemenu">
-                    <li><a href="#header">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <i class="fas fa-times" onclick="closemenu()"></i>
-                </ul>
-                <i class="fas fa-bars" onclick="openmenu()"></i>
-            </nav>
             <div class="header-text">
                 <p>UI/UX Designer</p>
-                <h1>Hi, I'm <span>Younus</span><br>Siddique From India</h1>
+                <h1>Namastey,<br>My name is <span>Younus</span><br>From India</h1>
             </div>
         </div>
     </div>
@@ -104,69 +116,97 @@
         </div>
     </div>
 <!-- ======================= Portfolio ===================== -->
-<div id="portfolio">
-    <div class="container">
-        <h1 class="sub-title">My Work</h1>
-        <div class="work-list">
-            <div class="work">
-                <img src="images/work-1.png" alt="work1">
-                <div class="layer">
-                    <h3>Social Media App</h3>
-                    <p>The app connects you to the talented people around the world. Download it from play store.</p>
-                    <a href="#">.<i class="fas fa-external-link-alt"></i></a>
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="sub-title">My Work</h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src="images/work-1.png" alt="work1">
+                    <div class="layer">
+                        <h3>Social Media App</h3>
+                        <p>The app connects you to the talented people around the world. Download it from play store.</p>
+                        <a href="#">.<i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/work-2.png" alt="work2">
+                    <div class="layer">
+                        <h3>Music App</h3>
+                        <p>The app connects you to the talented people around the world. Download it from play store.</p>
+                        <a href="#">.<i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/work-3.png" alt="work3">
+                    <div class="layer">
+                        <h3>Online Shopping App</h3>
+                        <p>The app connects you to the talented people around the world. Download it from play store.</p>
+                        <a href="#">.<i class="fas fa-external-link-alt"></i></a>
+                    </div>
                 </div>
             </div>
-            <div class="work">
-                <img src="images/work-2.png" alt="work2">
-                <div class="layer">
-                    <h3>Music App</h3>
-                    <p>The app connects you to the talented people around the world. Download it from play store.</p>
-                    <a href="#">.<i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-            <div class="work">
-                <img src="images/work-3.png" alt="work3">
-                <div class="layer">
-                    <h3>Online Shopping App</h3>
-                    <p>The app connects you to the talented people around the world. Download it from play store.</p>
-                    <a href="#">.<i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
+            <a href="#" class="btn">See More</a>
         </div>
-        <a href="#" class="btn">See More</a>
     </div>
-</div>
 <!-- ======================= Contact ===================== -->
-<div id="contact">
-    <div class="container">
-        <div class="row">
-            <div class="contact-left">
-                <h1 class="sub-title">Contact Me</h1>
-                <p><i class="fas fa-paper-plane"></i>contact@gmail.com</p>
-                <p><i class="fas fa-phone-square-alt"></i>0123456789</p>
-                <div class="social-icons">
-                    <a href="https://facebook.com/"><i class="fab fa-facebook"></i></a>
-                    <a href="https://twitter.com/"><i class="fab fa-twitter-square"></i></a>
-                    <a href="https://instagram.com/"><i class="fab fa-instagram"></i></a>
-                    <a href="https://linkedin.com/"><i class="fab fa-linkedin"></i></a>
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fas fa-paper-plane"></i>contact@gmail.com</p>
+                    <p><i class="fas fa-phone-square-alt"></i>0123456789</p>
+                    <div class="social-icons">
+                        <a href="https://facebook.com/"><i class="fab fa-facebook"></i></a>
+                        <a href="https://twitter.com/"><i class="fab fa-twitter-square"></i></a>
+                        <a href="https://instagram.com/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://linkedin.com/"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                    <a href="images/my-cv.pdf" download class="btn btn2">Download CV</a>
                 </div>
-                <a href="images/my-cv.pdf" download class="btn btn2">Download CV</a>
-            </div>
-            <div class="contact-right">
-                <form name="submit-to-google-sheet">
-                    <input type="text" name="Name", placeholder="YourName", required>
-                    <input type="email", name="Email", placeholder="Your Email", required>
-                    <textarea name="Message" rows="6", placeholder="Your Message"></textarea>
-                    <button type="submit" class="btn btn2">Submit</button>
-                </form>
-                <span id="msg"></span>
-            </div>
-        </div>  
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name", placeholder="YourName", required>
+                        <input type="email", name="Email", placeholder="Your Email", required>
+                        <textarea name="Message" rows="6", placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>  
+        </div>
+        <div class="copyright">
+            <p>Copyright ©️ Younus. Made with <i class="fas fa-heart"></i> by Easy Tutorials</p>
+        </div>
     </div>
-    <div class="copyright">
-        <p>Copyright ©️ Younus. Made with <i class="fas fa-heart"></i> by Easy Tutorials</p>
-    </div>
-</div>
+
+<!-- Script For NavBar -->
+<script>
+    var navbar = document.querySelector(".navbar");
+
+    window.addEventListener("scroll", () => {
+        if (window.pageYOffset > 200) {
+            navbar.classList.add("nav-after");
+        }
+        else {
+            navbar.classList.remove("nav-after");
+        }
+    })
+</script>
+
+<!-- Script For Scroll To Top Button -->
+<script>
+    var totop = document.querySelector(".scroll-to-top");
+
+    window.addEventListener("scroll", () => {
+        if(window.pageYOffset > 100) {
+            totop.classList.add("active");
+        }
+        else {
+            totop.classList.remove("active");
+        }
+    })
+</script>
 
 <!-- About Me Functions -->
 <script>
@@ -193,7 +233,7 @@
         sideMenu.style.right = "0";
     }
     function closemenu(){
-        sideMenu.style.right = "-200px";
+        sideMenu.style.right = "-100%";
     }
 </script>
 
@@ -216,6 +256,46 @@
             .catch(error => console.error('Error!', error.message))
     })
 </script>
+
+
+
+
+
+
+<script>
+    const hamburger = document.querySelector('.header .nav-bar .nav-list .hamburger');
+        const mobile_menu = document.querySelector('.header .nav-bar .nav-list ul');
+        const menu_item = document.querySelectorAll('.header .nav-bar .nav-list ul li a');
+        const header = document.querySelector('.header.container');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobile_menu.classList.toggle('active');
+        });
+
+        document.addEventListener('scroll', () => {
+            var scroll_position = window.scrollY;
+            if (scroll_position > 250) {
+                header.style.backgroundColor = '#29323c';
+            } else {
+                header.style.backgroundColor = 'transparent';
+            }
+        });
+
+        menu_item.forEach((item) => {
+            item.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                mobile_menu.classList.toggle('active');
+            });
+        });
+</script>
+
+
+
+
+
+
+
 
 </body>
 </html>

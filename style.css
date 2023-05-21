@@ -1,7 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 *{
     margin: 0;
     padding: 0;
-    font-family:  'Poppins', sans-serif;
+    font-family:  'Varela Round', sans-serif;
     box-sizing: border-box;
 }
 html{
@@ -10,38 +11,102 @@ html{
 body{
     background: #080808;
     color : #fff;
+    text-decoration: none;
+}
+.scroll-to-top{
+    background: #fff;
+    position: fixed;
+    bottom: 16px;
+    right: 32px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    color: #61b752;
+    text-decoration: none;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s;
+    z-index: 10;
+}
+.scroll-to-top.active{
+    bottom: 32px;
+    pointer-events: auto;
+    opacity: 1;
+    cursor: pointer;
 }
 
 /* ============================ Home ======================== */
-#header{
+.container{
+    padding: 10px 8%;
+}
+.brand a{
+    font-size: 20px;
+    text-decoration: none;
+    color: #fff;
+}
+.brand span{
+    color: #ff004f;
+}
+#bg-img{
     width: 100%;
     height: 100vh;
     background-image: url(images/background.png);
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
 }
-.container{
-    padding: 10px 10%;
+.header-text {
+    margin-top: 50%;
+    font-size: 25px;
 }
+
+.header-text h1 {
+    font-size: 30px;
+    margin-top: 20px;
+}
+
+.header-text h1 span {
+    color: #ff004f;
+}
+/* 
 nav{
+    padding: 0 30px;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+    background: none;
+    position: fixed;
+    overflow: hidden;
+    z-index: 10;
+}
+.navbar.nav-after {
+    background: #0a1f06;
 }
 .logo{
-    width: 140px;
+    width: 200px
+}
+nav .fas{
+    display: none;
 }
 nav ul li{
     display: inline-block;
     list-style: none;
-    margin: 10px 20px;
+    margin: 10px;
 }
 nav ul li a{
     color: #fff;
     text-decoration: none;
     font-size: 18px;
     position: relative;
+}
+nav ul li i{
+    color: #3a540f;
 }
 nav ul li a::after{
     content: '';
@@ -55,18 +120,157 @@ nav ul li a::after{
 }
 nav ul li a:hover::after{
     width: 100%;
+} */
+
+#header {
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: auto;
 }
-.header-text{
-    margin-top: 20%;
-    font-size: 30px;
+
+#header .nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    max-width: 1300px;
 }
-.header-text h1{
-    font-size: 60px;
-    margin-top: 20px;
+
+#header .nav-list ul {
+    list-style: none;
+    position: absolute;
+    background-color: rgb(31, 30, 30);
+    width: 100vw;
+    height: 100vh;
+    left: 100%;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    overflow-x: hidden;
+    transition: 0.5s ease left;
 }
-.header-text h1 span{
-    color: #ff004f;
+
+#header .nav-list ul.active {
+    left: 0%;
 }
+
+#header .nav-list ul a {
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    padding: 15px;
+    display: block;
+}
+
+#header .nav-list ul a::after {
+    content: attr(data-after);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    color: rgba(240, 248, 255, 0.021);
+    font-size: 100px;
+    letter-spacing: 50px;
+    z-index: -1;
+    transition: 0.3s ease letter-spacing;
+}
+
+#header .nav-list ul li:hover a::after {
+    transform: translate(-50%, -50%) scale(1);
+    letter-spacing: initial;
+}
+
+#header .nav-list ul li:hover a {
+    color: crimson;
+}
+
+#header .hamburger {
+    height: 50px;
+    width: 50px;
+    display: inline-block;
+    /* border: 3px solid white; */
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    cursor: pointer;
+    transform: scale(0.8);
+    margin-right: 10px;
+}
+
+#header .hamburger:after {
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    /* border: 3px solid white; */
+    animation: hamburger_puls 1s ease infinite;
+}
+
+#header .hamburger .bar {
+    height: 2px;
+    width: 25px;
+    position: relative;
+    background-color: white;
+    z-index: -1;
+}
+
+#header .hamburger .bar::after,
+#header .hamburger .bar::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    background-color: white;
+    transition: 0.3s ease;
+    transition-property: top, bottom;
+}
+
+#header .hamburger .bar::after {
+    top: 8px;
+}
+
+#header .hamburger .bar::before {
+    bottom: 8px;
+}
+
+#header .hamburger.active .bar::after {
+    top: 0;
+    transform: rotateZ(-45deg);
+}
+
+#header .hamburger.active .bar::before {
+    bottom: 0;
+    transform: rotateZ(45deg);
+}
+
+#header .hamburger.active .bar {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+
+
+
+
+
+
+
+
+
 
 /* ============================ About ======================== */
 #about{
@@ -89,7 +293,7 @@ nav ul li a:hover::after{
     flex-basis: 60%;
 }
 .sub-title{
-    font-size: 60px;
+    font-size: 50px;
     font-weight: 600;
     color: #fff;
 }
@@ -320,45 +524,142 @@ form .btn2{
 }
 
 /* ============================ CSS For Small Screens ======================== */
-nav .fas{
-    display: none;
-}
 @media only screen and (max-width: 600px){
     #header{
         background-image: url(images/phone-background.png);
     }
     .header-text{
-        margin-top: 100%;
-        font-size: 16px;
+        margin-top: 60%;
+        font-size: 20px;
     }
     .header-text h1{
-        font-size: 30px;
+        font-size: 35px;
     }
-    nav .fas {
+    .logo{
+        width: 130px;
+    }
+    nav .fas{
         display: block;
         font-size: 25px;
     }
-    nav ul{
+    nav ul {
+            list-style: none;
+            position: absolute;
+            background-color: rgb(31, 30, 30);
+            width: 100vw;
+            height: 100vh;
+            left: 100%;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+            overflow-x: hidden;
+            transition: 0.5s ease left;
+    }
+    /* nav ul{
         background: #ff004f;
         position: fixed;
         top: 0;
-        right: -200px;
-        width: 200px;
+        right: -100%;
+        width: 100%;
         height: 100vh;
-        padding-top: 50px;
+        padding-top: 30%;
         z-index: 2;
         transition: right 0.5s;
-    }
+    } */
     nav ul li{
         display: block;
         margin: 25px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    nav ul li a::after{
+        content: attr(data-after);
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        color: #262626;
+        font-size: 9rem;
+        letter-spacing: 40px;
+        z-index: -1;
+    }
+    nav ul li:hover a::after{
+        transform: translate(-50%, 50%) scale(1);
+    }
+    nav ul li a:hover{
+        color: #3a540f;
     }
     nav ul .fas{
         position: absolute;
-        top: 25px;
-        left: 25px;
+        top: 16px;
+        right: 30px;
         cursor: pointer;
     }
+    nav ul li i{
+        color: #262626;
+    }
+
+
+
+    nav{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: 100%;
+        max-width: 1300px;
+        padding: 0 10px;
+    }
+    
+    
+    nav ul.active {
+            left: 0%;
+        }
+    
+    nav ul a {
+            font-size: 2.5rem;
+            font-weight: 500;
+            letter-spacing: 0.2rem;
+            text-decoration: none;
+            color: white;
+            text-transform: uppercase;
+            padding: 20px;
+            display: block;
+        }
+    
+    nav ul a::after {
+            content: attr(data-after);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            color: rgba(240, 248, 255, 0.021);
+            font-size: 13rem;
+            letter-spacing: 50px;
+            z-index: -1;
+            transition: 0.3s ease letter-spacing;
+        }
+    
+    nav ul li:hover a::after {
+            transform: translate(-50%, -50%) scale(1);
+            letter-spacing: initial;
+        }
+    
+    nav ul li:hover a {
+            color: crimson;
+    }
+
+
+
+
+
+
+
+
+
     .sub-title{
         font-size: 40px;
     }
@@ -384,9 +685,35 @@ nav .fas{
 }
 
 
-
-
-
+/* ============================ CSS For Desktop Screens ======================== */
+@media only screen and (min-width: 750px) {
+    #header .hamburger {
+            display: none;
+        }
+    
+        #header .nav-list ul {
+            position: initial;
+            display: block;
+            height: auto;
+            width: fit-content;
+            /* width: -moz-fit-content */
+            background-color: transparent;
+        }
+    
+        #header .nav-list ul li {
+            display: inline-block;
+        }
+        
+        #header .nav-list ul li a {
+            padding: 8px;
+            font-size: 16pxz;
+            letter-spacing: normal;
+        }
+    
+        #header .nav-list ul a:after {
+            display: none;
+        }
+}
 
 
 
